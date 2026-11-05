@@ -1,27 +1,24 @@
-class Telephone:
-    def __init__(self, marque, couleur, batterie):
-        self.marque = marque
-        self.couleur = couleur
-        self.batterie = batterie
+class Employe:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
         
     def se_presenter(self):
-     print(f"Mon telephone est {self.marque}  de couleur {self.couleur}, avec une batterie de {self.batterie} mAH")  
-     
-    def appeler(self):
-        print(f"Le téléphone est en train d'appeler.")  
+        print(f"Je m'appelle {self.nom} et j'ai{self.age} ans.")  
+          
+          
+class Developpeur(Employe):
+    def __init__(self, nom, age, langage_prefere):
+        super().__init__( nom, age)
+        self.langage_prefere = langage_prefere
         
-    def envoyer_message(self):
-        print(f"Le téléphone envoie un message.") 
+    def se_presenter(self):
+        Employe.se_presenter(self) 
+        print(f"Mon langage de programmation préféré est le {self.langage_prefere}.")   
         
         
-telephone1 = Telephone("OPPO", "noir", 5000)
-telephone2 = Telephone("TECNO", "bleu", 5500)
+        
+developpeur1 = Developpeur("Soa", 25, "Python")     
 
-telephone1.se_presenter()
-telephone1.appeler()
-telephone1.envoyer_message()
-
-telephone2.se_presenter()
-telephone2.appeler()
-telephone2.envoyer_message()
-    
+developpeur1.se_presenter()       
+                  
